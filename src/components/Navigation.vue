@@ -1,11 +1,19 @@
 <template>
   <div class="flex justify-between p-2">
     <div>
-      <div class="w-fit p-2 rounded-md bg-primary flex flex-row-reverse gap-2">
-        <p class="text-md text-primary-foreground">TravelHub</p>
-        <Car class="text-primary-foreground" />
-      </div>
-      <div class="bg-primary w-10 h-10"></div>
+      <Popover>
+        <template v-slot:trigger>
+          <div
+            class="w-fit p-2 rounded-md bg-primary flex flex-row-reverse gap-2"
+          >
+            <p class="text-md text-primary-foreground">TravelHub</p>
+            <Car class="text-primary-foreground" />
+          </div>
+        </template>
+        <template v-slot:content>
+          <div class="bg-primary w-10 h-10"></div>
+        </template>
+      </Popover>
     </div>
     <Popover>
       <template v-slot:trigger>
@@ -14,9 +22,7 @@
 
       <template v-slot:content
         ><Card>
-          <BaseButton variant="disabled" :loading="true" :left-icon="Cog"
-            >Settings</BaseButton
-          >
+          <BaseButton :loading="false" :left-icon="Cog">Settings</BaseButton>
         </Card>
       </template>
     </Popover>

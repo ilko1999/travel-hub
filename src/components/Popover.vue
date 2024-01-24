@@ -6,7 +6,7 @@
 
     <div
       v-show="popoverVisible"
-      class="absolute z-50 right-2 animate-in fade-in zoom-in"
+      class="absolute z-50 right-2 top-14 animate-in fade-in zoom-in"
     >
       <slot name="content">Popover Content</slot>
     </div>
